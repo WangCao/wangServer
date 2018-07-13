@@ -14,6 +14,9 @@
     "easy",
     "server"
   ],
+  "bin": {
+    "wangserver": "./bin/wangserver.js"
+  },
   "author": "wangcao",
   "license": "MIT",
   "bugs": {
@@ -21,6 +24,8 @@
   },
   "homepage": "https://github.com/wangServer/wangServer#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
