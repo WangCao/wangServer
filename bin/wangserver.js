@@ -63,7 +63,7 @@ program
   .command('edit [dir]')
   .description('启动测试页面，编辑api接口')
   .action(function () {
-    console.log(`测试页面已经启动，路径为${process.cwd()}`)
+    console.log(`此功能敬请期待`)
   })
 
 program.parse(process.argv);
