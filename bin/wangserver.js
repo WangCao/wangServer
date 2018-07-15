@@ -3,10 +3,13 @@
 const program = require('commander');
 const chalk = require('chalk');
 const app = require('../lib/server');
+const copy = require('../lib/copy');
+
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 
+const currentPath = process.cwd();
 // 版本命令
 program.version('0.0.1');
 
@@ -28,6 +31,7 @@ program
       if (err) {
         // 文件不存在
         console.log(chalk.bgYellow(`不存在config.json文件，使用默认设置`))
+        console.log(chalk.bgYellow(`关闭服务器，使用 "wangserver init" 可以生成默认配置文件 `))
       } else {
         // 文件存在
         let CONFIG = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'config.json'))) || {};
@@ -52,7 +56,7 @@ program
   .command('init')
   .description('生成config.json文件模板')
   .action(function () {
-    console.log(`生成config.json文件模板`)
+    copy(path.resolve(__dirname,'../lib/config.json'),currentPath);
   })
 
 program
