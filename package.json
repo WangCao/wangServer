@@ -11,10 +11,10 @@
     "url": "git+https://github.com/wangServer/wangServer.git"
   },
   "keywords": [
-    "快乐开发前端页面",
-    "自定义接口",
-    "快速搭建开发环境",
-    "快速伪造接口"
+    "easy",
+    "Forgery of data",
+    "Koa",
+    "Simple server"
   ],
   "bin": {
     "wangserver": "./bin/wangserver.js"
