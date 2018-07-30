@@ -5,9 +5,15 @@
             "url": "/api/1",
             "res": {
                 "name": "wangcao",
-                "age": "30",
+                "age": "18",
                 "work": "code farmer"
-            }
+            },
+            "cookies": [
+                {
+                    "name": "user",
+                    "value": "wangcao"
+                }
+            ]
         }
     ]
 
