@@ -1,6 +1,6 @@
 {
   "name": "wangserver",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
   "scripts": {

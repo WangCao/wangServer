@@ -11,7 +11,7 @@ const os = require('os');
 
 const currentPath = process.cwd();
 // 版本命令
-program.version('0.0.5');
+program.version('0.0.6');
 
 program
   .command('help')
