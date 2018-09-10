@@ -1,5 +1,5 @@
 {
-  "name": "sserver",
+  "name": "suserver",
   "version": "0.0.5",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WangCao/SServer"
+    "url": "git+https://github.com/WangCao/suServer"
   },
   "keywords": [
     "快乐开发前端页面",
@@ -17,14 +17,14 @@
     "快速伪造接口"
   ],
   "bin": {
-    "wangserver": "./bin/wangserver.js"
+    "su": "./bin/su.js"
   },
   "author": "wangcao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WangCao/SServer/issues"
+    "url": "https://github.com/WangCao/suServer/issues"
   },
-  "homepage": "https://github.com/WangCao/SServer/blob/master/README.md",
+  "homepage": "https://github.com/WangCao/suServer/blob/master/README.md",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
