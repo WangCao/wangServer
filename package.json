@@ -1,6 +1,6 @@
 {
-  "name": "wangserver",
-  "version": "0.0.6",
+  "name": "sserver",
+  "version": "0.0.5",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wangServer/wangServer.git"
+    "url": "git+https://github.com/WangCao/SServer"
   },
   "keywords": [
-    "easy",
-    "Forgery of data",
-    "Koa",
-    "Simple server"
+    "快乐开发前端页面",
+    "自定义接口",
+    "快速搭建开发环境",
+    "快速伪造接口"
   ],
   "bin": {
     "wangserver": "./bin/wangserver.js"
@@ -22,9 +22,9 @@
   "author": "wangcao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wangServer/wangServer/issues"
+    "url": "https://github.com/WangCao/SServer/issues"
   },
-  "homepage": "https://github.com/wangServer/wangServer#readme",
+  "homepage": "https://github.com/WangCao/SServer/blob/master/README.md",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
