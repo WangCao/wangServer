@@ -1,6 +1,6 @@
 {
   "name": "suserver",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
   "scripts": {
