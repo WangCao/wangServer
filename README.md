@@ -1,4 +1,4 @@
-# suServer（原名：wangServer）
+# suServer 速Server（原名：wangServer）
 一个基于KOA，小巧快速，可以自定义接口的服务器命令行工具,主要功能：
  * 设置指定目录为静态服务器，避免一些简单页面需要打开Nginx等调试
  * 显示页面调用日志，便于调试
