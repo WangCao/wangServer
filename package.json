@@ -1,6 +1,6 @@
 {
-  "name": "suserver",
-  "version": "0.0.8",
+  "name": "fastserver",
+  "version": "0.0.10",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WangCao/suServer"
+    "url": "git+https://github.com/WangCao/fastServer"
   },
   "keywords": [
     "快乐开发前端页面",
@@ -17,14 +17,14 @@
     "快速伪造接口"
   ],
   "bin": {
-    "su": "./bin/su.js"
+    "fast": "./bin/fast.js"
   },
   "author": "wangcao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WangCao/suServer/issues"
+    "url": "https://github.com/WangCao/fastServer/issues"
   },
-  "homepage": "https://github.com/WangCao/suServer/blob/master/README.md",
+  "homepage": "https://github.com/WangCao/fastServer/blob/master/README.md",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",

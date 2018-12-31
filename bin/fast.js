@@ -11,7 +11,7 @@ const os = require('os');
 
 const currentPath = process.cwd();
 // 版本命令
-program.version('0.0.8');
+program.version('0.0.10);
 
 program
   .command('help')
@@ -31,7 +31,7 @@ program
       if (err) {
         // 文件不存在
         console.log(chalk.yellow(`不存在config.json文件，使用默认设置`))
-        console.log(chalk.yellow(`关闭服务器，使用 "su init" 可以生成默认配置文件 `))
+        console.log(chalk.yellow(`关闭服务器，使用 "fast init" 可以生成默认配置文件 `))
       } else {
         // 文件存在
         let CONFIG = JSON.parse(fs.readFileSync(path.resolve(process.cwd(), 'config.json'))) || {};
