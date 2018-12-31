@@ -1,4 +1,4 @@
-# fastServer（原名：suserver）
+# quickserver（原名：suserver）
 一个基于KOA，小巧快速，可以自定义接口的服务器命令行工具,主要功能：
  * 设置指定目录为静态服务器，避免一些简单页面需要打开Nginx等调试
  * 显示页面调用日志，便于调试
@@ -7,7 +7,7 @@
  * 方便自定义接口及接口数据，用于调试
 ### 如何使用
 ```sh
-$ npm install fastserver -g
+$ npm install quickserver -g
 ```
 请确保[Node.js](https://nodejs.org/en/)版本大于8.0
 
