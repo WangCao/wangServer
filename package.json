@@ -1,5 +1,5 @@
 {
-  "name": "quickserver",
+  "name": "wangserver",
   "version": "0.0.11",
   "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WangCao/quickserver"
+    "url": "git+https://github.com/WangCao/wangserver"
   },
   "keywords": [
     "快乐开发前端页面",
@@ -17,14 +17,14 @@
     "快速伪造接口"
   ],
   "bin": {
-    "quick": "./bin/quick.js"
+    "wang": "./bin/wang.js"
   },
   "author": "wangcao",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WangCao/quickserver/issues"
+    "url": "https://github.com/WangCao/wangserver/issues"
   },
-  "homepage": "https://github.com/WangCao/quickserver/blob/master/README.md",
+  "homepage": "https://github.com/WangCao/wangserver/blob/master/README.md",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",

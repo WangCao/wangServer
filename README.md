@@ -1,4 +1,4 @@
-# quickserver（原名：suserver）
+# wangserver
 一个基于KOA，小巧快速，可以自定义接口的服务器命令行工具,主要功能：
  * 设置指定目录为静态服务器，避免一些简单页面需要打开Nginx等调试
  * 显示页面调用日志，便于调试
@@ -7,19 +7,19 @@
  * 方便自定义接口及接口数据，用于调试
 ### 如何使用
 ```sh
-$ npm install quickserver -g
+$ npm install wangserver -g
 ```
 请确保[Node.js](https://nodejs.org/en/)版本大于8.0
 
 
 ### 使当前目录为服务器，命令行进入目录，输入以下回车
 ```sh
-$ quick start
+$ wang start
 ```
 
 ### 初始化config.json 文件，命令行进入目录，输入以下回车
 ```sh
-$ quick init
+$ wang init
 ```
 生成`config.json`文件，用于设置服务器端口
 ```json
@@ -43,5 +43,5 @@ $ quick init
 ### 帮助 
 获取帮助信息
 ```sh
-$ quick -h
+$ wang -h
 ```
