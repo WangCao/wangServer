@@ -14,12 +14,12 @@ $ npm install quickserver -g
 
 ### 使当前目录为服务器，命令行进入目录，输入以下回车
 ```sh
-$ fast start
+$ quick start
 ```
 
 ### 初始化config.json 文件，命令行进入目录，输入以下回车
 ```sh
-$ fast init
+$ quick init
 ```
 生成`config.json`文件，用于设置服务器端口
 ```json
@@ -43,5 +43,5 @@ $ fast init
 ### 帮助 
 获取帮助信息
 ```sh
-$ fast -h
+$ quick -h
 ```
