@@ -17,7 +17,7 @@
     "快速伪造接口"
   ],
   "bin": {
-    "fast": "./bin/fast.js"
+    "quick": "./bin/quick.js"
   },
   "author": "wangcao",
   "license": "MIT",
