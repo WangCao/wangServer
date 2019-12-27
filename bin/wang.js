@@ -3,17 +3,12 @@
 const program = require("commander");
 const app = require("../lib/server");
 const copy = require("../lib/copy");
-
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
-
 const open = require("open");
-
 const currentPath = process.cwd();
-
 const package = require("../package.json");
-
 const tools = require("../lib/common/tools");
 
 // 版本命令
