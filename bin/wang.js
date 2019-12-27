@@ -9,10 +9,14 @@ const fs = require("fs");
 const path = require("path");
 const os = require("os");
 
+const open = require("open");
+
 const currentPath = process.cwd();
 
+const package = require("../package.json");
+
 // 版本命令
-program.version("0.0.11");
+program.version(package.version);
 
 program
   .command("help")
@@ -24,16 +28,18 @@ program
 program
   .command("start [dir]")
   .description("启动静态服务器")
-  .action(function() {
+  .action(async function() {
     // 获取用户端口
     let filepath = path.resolve(process.cwd(), "config.json");
     let port = 3000;
-    fs.access(filepath, fs.constants.F_OK, err => {
+    fs.access(filepath, fs.constants.F_OK, async err => {
       if (err) {
         // 文件不存在
-        console.log(chalk.yellow(`不存在config.json文件，使用默认设置`));
+        console.log(chalk.yellow(`[WARN] 不存在config.json文件，使用默认设置`));
         console.log(
-          chalk.yellow(`关闭服务器，使用 "wang init" 可以生成默认配置文件 `)
+          chalk.yellow(
+            `[WARN] 关闭服务器，使用 "wang init" 可以生成默认配置文件 `
+          )
         );
       } else {
         // 文件存在
@@ -43,22 +49,21 @@ program
           ) || {};
         port = CONFIG.port || 3000;
         console.log(
-          chalk.bgGreen(
-            `存在config.json文件，可以在文件中设置端口或者虚拟api接口`
+          chalk.green(
+            `[INFO] 存在config.json文件，可以在文件中设置端口或者虚拟api接口`
           )
         );
       }
       let server = app.listen(port);
-      console.log(chalk.green(`静态服务器启动`));
-      console.log(chalk.green(`路径：${process.cwd()}`));
-      console.log(chalk.green(`端口：${port}`));
-      let ipinfo = getipv4();
-      if (ipinfo["本地连接"]) {
-        console.log(chalk.green(`本地IP：${ipinfo["本地连接"][1].address}`));
-      } else if (ipinfo["以太网"]) {
-        console.log(chalk.green(`本地IP：${getipv4()["以太网"][1].address}`));
-      }
-      console.log(chalk.green(`日志： `));
+      console.log(chalk.green(`[INFO] 静态服务器启动`));
+      console.log(chalk.green(`[INFO] 路径：${process.cwd()}`));
+      let ip = getipv4();
+      console.log(chalk.green(`[INFO] IP：${ip}`));
+      console.log(chalk.green(`[INFO] 端口：${port}`));
+      // 浏览器打开
+      await handleOpen(`http:${ip}:${port}`);
+      console.log(chalk.green(`[INFO] 使用默认浏览器打开`));
+      console.log(chalk.green(`[LOG] 日志： `));
     });
   });
 
@@ -135,5 +140,18 @@ program.parse(process.argv);
 
 // 获取IPV4的地址
 function getipv4() {
-  return os.networkInterfaces();
+  let interfaces = os.networkInterfaces();
+  for (let key in interfaces) {
+    for (let item2 of interfaces[key]) {
+      if (!item2.internal && item2.family === "IPv4") {
+        return item2.address;
+      }
+    }
+  }
+  chalk.yellow("[WARN] 未能识别本机IP地址，使用默认IP: 127.0.0.1");
+  return "127.0.0.1";
+}
+
+async function handleOpen(path) {
+  await open(path);
 }
