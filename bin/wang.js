@@ -15,6 +15,8 @@ const currentPath = process.cwd();
 
 const package = require("../package.json");
 
+const tools = require("../lib/common/tools");
+
 // 版本命令
 program.version(package.version);
 
@@ -35,11 +37,10 @@ program
     fs.access(filepath, fs.constants.F_OK, async err => {
       if (err) {
         // 文件不存在
-        console.log(chalk.yellow(`[WARN] 不存在config.json文件，使用默认设置`));
-        console.log(
-          chalk.yellow(
-            `[WARN] 关闭服务器，使用 "wang init" 可以生成默认配置文件 `
-          )
+        tools.console_warn(`不存在config.json文件，使用默认设置`);
+
+        tools.console_warn(
+          `关闭服务器，使用 "wang init" 可以生成默认配置文件 `
         );
       } else {
         // 文件存在
@@ -48,22 +49,21 @@ program
             fs.readFileSync(path.resolve(process.cwd(), "config.json"))
           ) || {};
         port = CONFIG.port || 3000;
-        console.log(
-          chalk.green(
-            `[INFO] 存在config.json文件，可以在文件中设置端口或者虚拟api接口`
-          )
+
+        tools.console_info(
+          `存在config.json文件，可以在文件中设置端口或者虚拟api接口`
         );
       }
       let server = app.listen(port);
-      console.log(chalk.green(`[INFO] 静态服务器启动`));
-      console.log(chalk.green(`[INFO] 路径：${process.cwd()}`));
+      tools.console_info(`静态服务器启动`);
+      tools.console_info(`路径：${process.cwd()}`);
       let ip = getipv4();
-      console.log(chalk.green(`[INFO] IP：${ip}`));
-      console.log(chalk.green(`[INFO] 端口：${port}`));
+      tools.console_info(`IP：${ip}`);
+      tools.console_info(`端口：${port}`);
       // 浏览器打开
       await handleOpen(`http:${ip}:${port}`);
-      console.log(chalk.green(`[INFO] 使用默认浏览器打开`));
-      console.log(chalk.green(`[LOG] 日志： `));
+      tools.console_info(`使用默认浏览器打开`);
+      tools.console_log(`日志： `);
     });
   });
 
@@ -148,7 +148,7 @@ function getipv4() {
       }
     }
   }
-  chalk.yellow("[WARN] 未能识别本机IP地址，使用默认IP: 127.0.0.1");
+  tools.console_warn("未能识别本机IP地址，使用默认IP: 127.0.0.1");
   return "127.0.0.1";
 }
 
