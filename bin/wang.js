@@ -17,18 +17,18 @@ program.version(package.version);
 program
   .command("help")
   .description("显示使用帮助")
-  .action(function() {
+  .action(function () {
     program.outputHelp();
   });
 
 program
   .command("start [dir]")
   .description("启动静态服务器")
-  .action(async function() {
+  .action(async function () {
     // 获取用户端口
     let filepath = path.resolve(process.cwd(), "config.json");
     let port = 3000;
-    fs.access(filepath, fs.constants.F_OK, async err => {
+    fs.access(filepath, fs.constants.F_OK, async (err) => {
       if (err) {
         // 文件不存在
         tools.console_warn(`不存在config.json文件，使用默认设置`);
@@ -64,21 +64,21 @@ program
 program
   .command("init")
   .description("生成config.json文件模板")
-  .action(function() {
+  .action(function () {
     copy(path.resolve(__dirname, "../lib/config.json"), currentPath);
   });
 
 program
   .command("edit [dir]")
   .description("启动测试页面，编辑api接口")
-  .action(function() {
+  .action(function () {
     console.log(`此功能敬请期待`);
   });
 
 program
   .command("stat")
   .description("统计代码行数")
-  .action(function() {
+  .action(function () {
     // 获取命令行参数
     let parm = process.argv.splice(3);
     // 第一个参数是路径
@@ -103,10 +103,10 @@ program
     async function start(pt) {
       let files = fs.readdirSync(pt);
       files
-        .map(file => {
+        .map((file) => {
           return `${pt}/${file}`;
         })
-        .forEach(file => {
+        .forEach((file) => {
           let stat = fs.statSync(file);
           if (stat.isDirectory()) {
             if (filter.indexOf(pt) != -1) {

@@ -1,7 +1,7 @@
 {
   "name": "wangserver",
-  "version": "0.1.0",
-  "description": "简单的前端开发服务器  自定义接口 伪造数据接口 支持跨域",
+  "version": "0.1.1",
+  "description": "随时将文件夹变为静态资源服务器 自定义接口 伪造数据接口 支持跨域",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,10 +11,10 @@
     "url": "git+https://github.com/WangCao/wangserver"
   },
   "keywords": [
-    "快乐开发前端页面",
-    "自定义接口",
-    "快速搭建开发环境",
-    "快速伪造接口"
+    "Static",
+    "file",
+    "server",
+    "Assets"
   ],
   "bin": {
     "wang": "./bin/wang.js"
@@ -28,12 +28,14 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
+    "ejs": "^3.0.1",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
+    "koa-views": "^6.2.1",
     "open": "^7.0.0",
     "user": "0.0.0"
   }
