@@ -2,6 +2,7 @@
 
 const program = require("commander");
 const app = require("../lib/server");
+const startServer = require("../lib/server2");
 const copy = require("../lib/copy");
 const fs = require("fs");
 const path = require("path");
@@ -19,6 +20,24 @@ program
   .description("显示使用帮助")
   .action(function () {
     program.outputHelp();
+  });
+
+program
+  .command("ppt [filename]")
+  .description("展示pdf")
+  .action(async function (data) {
+    if (!data) {
+      tools.console_err("请输入配置文件名称，或者路径");
+      return;
+    }
+    if (tools.exist(data)) {
+      tools.console_ora("正在解析配置文件", (ora) => {
+        startServer(data);
+        setTimeout(() => {
+          ora.succeed("解析成功");
+        }, 1000);
+      });
+    }
   });
 
 program

@@ -1,0 +1,10 @@
+languages:
+  - Ruby
+  - Perl
+  - Python
+pages:
+  - type: home
+    title: vim 从入门到放弃
+    subtitle: 粗略介绍vim使用方式
+  - type: normal
+    title: vim 从入门到放弃
