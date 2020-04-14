@@ -31,11 +31,13 @@ program
       return;
     }
     if (tools.exist(data)) {
-      tools.console_ora("正在解析配置文件", (ora) => {
+      tools.console_ora("正在解析配置文件", async (ora) => {
         startServer(data);
         setTimeout(() => {
           ora.succeed("解析成功");
         }, 1000);
+        let ip = getipv4();
+        await handleOpen(`http:${ip}:2020/htmlppt`);
       });
     }
   });
