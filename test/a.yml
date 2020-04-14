@@ -98,7 +98,7 @@ pages:
   # 普通页面
   - type: left_msg_right_image
     title: 如何学习
-    msg: 没事多看右边图片
+    msg: 没事多看右边图片,没事研究下vimscript
     img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586857627562&di=68a2ec8fdea5ff63a7ff95d745ccad8a&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1613534688%2C772101039%26fm%3D214%26gp%3D0.jpg
 
   # 普通页面

@@ -5,6 +5,7 @@
  * 显示本地服务器相关信息，便于调试
  * 方便自定义端口
  * 方便自定义接口及接口数据，用于调试
+ * 基于webslider生成 html ppt
 ### 如何使用
 ```sh
 $ npm install wangserver -g
@@ -40,6 +41,17 @@ $ wang init
 }
 ```
 如果需要获取此数据，请ajax请求 `http://localhost:3000/api/1`接口获取，目前只支持GET请求。
+
+### 生成 HTML PPT
+```sh
+wang ppt {配置文件名}
+```
+例子，在test文件夹中：
+```sh
+wang ppt a.yml
+```
+
+
 ### 帮助 
 获取帮助信息
 ```sh
