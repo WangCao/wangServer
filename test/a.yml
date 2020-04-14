@@ -1,10 +1,116 @@
-languages:
-  - Ruby
-  - Perl
-  - Python
 pages:
+  # 首页
   - type: home
     title: vim 从入门到放弃
-    subtitle: 粗略介绍vim使用方式
-  - type: normal
-    title: vim 从入门到放弃
+    subtitle: 熟悉唯一能跟上你思维的文本编辑器
+
+  # 卡片页
+  - type: card
+    title: vim的优缺点
+    subtitle: 为何许多人依然在使用vim，应为已经习惯，退不出来
+    cards:
+      - title: 优点
+        msg: 强大的操作命令，形成肌肉记忆，理想化能跟上思维速度。
+      - title: 缺点
+        msg: 学习陈本高，在智能编辑器及各种ide层出不穷的今天，学习必要性下降
+
+  # 普通页面
+  - type: left_msg_right_image
+    title: 模式介绍
+    msg: vim 包含四种主要模式，及若干种小型模式等
+    table:
+      - key: 普通模式
+        value: normal 光标移动，执行命令
+      - key: 插入模式
+        value: insert 打字
+      - key: 命令行模式
+        value: 理论上可以完成vim所有功能
+      - key: 可视模式
+        value: visual 块操作
+    img: https://www.runoob.com/wp-content/uploads/2014/07/vim-vi-workmodel.png
+
+  - type: title-msg
+    title: 模式间切换
+    subtitle: 首先我们得确定我们在哪个模式
+    lines:
+      - normal -> insert：a：管标之后插入； A：行尾插入； i：光标之前插入； I：行首插入； o：下一行插入； O：上一行插入；
+      - normal -> 命令：  ： /：调出查找提示符；c-r=： 访问表达式寄存器
+      - normal -> visual： v：单字符选取； V：每一行选取； c-v：块选取；
+      - any -> normal： <Esc>
+
+  - type: title-msg
+    title: normal 模式
+    subtitle: 上下翻飞
+    lines:
+      - (h,j,k,l) 光标移动
+      - w 下一个单词 b 前一个单词
+      - c-f c-b 上翻/下翻
+      - gg 行首 G 行尾巴
+
+  - type: title-msg
+    title: insert 模式
+    subtitle: 不用将笔总停留在画板上
+    lines:
+      - 程序员只有一小部分时间在编写代码，绝大部分时间在思考，阅读，在代码中穿梭
+      - 修改代码不一定是编写代码，也包含复制、移动、删除
+      - 撤销命令的粒度取决于进入插入模式，到返回普通模式为止，期间所有操作为一次修改
+      - c-o 插入-普通模式，非常有用
+      - c-r= 在插入模式使用表达式寄存器，非常有用
+
+  - type: title-msg
+    title: visual 模式
+    subtitle: 对文本块的整体操作
+    lines:
+      - gv 重复前一次可视化模式选中文本
+      - o 切换选中端点
+      - visual + 命令发挥最大作用
+
+  - type: title-msg
+    title: 命令行模式
+    subtitle: 啥都会
+    lines:
+      - 命令行模式包含vim的所有功能
+      - copy 复制  move 移动
+      - 重复上一次命令行操作
+      - ：normal 为每一行执行命令行操作
+      - q/ 打开查找命令行历史的命令行窗口
+      - 执行shell ：！
+      - / 查找
+
+  - type: title-msg
+    title: 寄存器
+    subtitle: 复制粘贴最重要
+    lines:
+      - ' "":无名寄存器'
+      - ' "a-"z :有名寄存器'
+      - '"_:黑洞寄存器'
+      - '"+:系统粘贴版'
+
+  - type: title-msg
+    title: 宏
+    subtitle: 让无聊变得简单
+    lines:
+      - .命令 重复小修改 小型的宏
+      - 将任意操作录制到寄存器，用户之后回访
+      - qa 开始录制宏并保存在a寄存器 q 结束
+      - "@a 播放宏，命令签名加数字，代表要执行这个命令多少次"
+
+  # 普通页面
+  - type: left_msg_right_image
+    title: 如何学习
+    msg: 没事多看右边图片
+    img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586857627562&di=68a2ec8fdea5ff63a7ff95d745ccad8a&imgtype=0&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D1613534688%2C772101039%26fm%3D214%26gp%3D0.jpg
+
+  # 普通页面
+  - type: left_msg_right_image
+    title: 是否有必要学习
+    msg: vim 像一门钻木取火的技术，谁能保证一直运气好，用不到
+    img: ./images/img1.png
+
+  # 普通页面
+  - type: left_msg_right_image
+    title: 比如这样
+    img: ./images/img2.png
+
+  - type: bye
+    title: Thank you!
